@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
-import User from "./UserContext";
+import UserContext from "./UserContext";
 
 function AppHeader() {
-  const userData = useContext(User);
+  const userData = useContext(UserContext);
   return (
     <div className="app-header-container">
       <h1 className="app-title">Products</h1>

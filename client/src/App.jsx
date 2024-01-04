@@ -3,6 +3,7 @@ import "./App.css";
 
 import HomePage from "./pages/HomePage.jsx";
 import ViewProductPage from "./pages/ViewProductPage.jsx";
+import User from "./components/UserContext.jsx";
 
 function App() {
   const userData = {
@@ -13,12 +14,14 @@ function App() {
 
   return (
     <div className="App">
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/product/view/:id" element={<ViewProductPage />} />
-        </Routes>
-      </Router>
+      <User.Provider value={userData}>
+        <Router>
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/product/view/:id" element={<ViewProductPage />} />
+          </Routes>
+        </Router>
+      </User.Provider>
     </div>
   );
 }
